@@ -1,14 +1,10 @@
 CXX = g++
-CXXFLAGS = -g -Wall -std=c++11
+CXXFLAGS = -g -Wall -Wextra -std=c++11
 
-TARGET = matrix
-
-all: $(TARGET)
-
-$(TARGET): matrix.cpp
-	$(CXX) $(CXXFLAGS) matrix.cpp -o $(TARGET)
+matrix: matrix.cpp
+	$(CXX) $(CXXFLAGS) -o matrix matrix.cpp
 
 clean:
-	rm -f $(TARGET)
+	rm -f matrix results.txt
 
-.PHONY: all clean
+.PHONY: clean
